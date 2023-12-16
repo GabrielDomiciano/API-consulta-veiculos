@@ -6,7 +6,9 @@ use App\Core\Database\Tabela;
 
 class Api {
 
-  public static function getUsers() {
-    return (new Tabela('user'))->select()->fetchObject();
+  public static function getNameApi() {
+    $user = (new Tabela('api_name'))->select('id = 1')->fetchObject();
+  
+    return $user->nome; 
   }
 }
